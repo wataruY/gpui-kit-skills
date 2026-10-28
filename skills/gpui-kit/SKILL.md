@@ -10,6 +10,19 @@ each layer is reachable by name: `gpui_kit::component` (styled components),
 `gpui_kit::base` (unstyled behavior), `gpui_kit::assets` (default icons),
 `gpui_kit::platform`.
 
+## Fork additions: avoid repeated repair loops
+
+For an unfamiliar call or E0599/E0061, use [agent preflight](references/agent-preflight.md)
+to inspect the lock-matching local API before repeating a builder pattern. It
+includes bounded source lookup and relative-reference resolution helpers; neither
+runs Cargo, downloads dependencies, or rewrites code. Check receiver, trait,
+arguments, and imports in each module/test scope; text lookup is not type checking.
+
+For real-window checks, read [native verification](references/native-verification.md)
+when diagnosing a wait/focus failure or preparing captures. It covers failure
+evidence, measured window/capture dimensions, and result provenance without
+replacing the platform's isolated input harness.
+
 Start with [component-family conventions](references/conventions.md) to choose the constructor, state owner, event, and layout contract for the task. Learn the family once, then verify the specific component supports the capability.
 
 For a complete compiled view with retained state, subscriptions, and overlay

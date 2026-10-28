@@ -12,6 +12,25 @@ This is an independent derivative repository, not a full GitHub network fork.
 
 APM can install this bundle using `wataruY/gpui-kit-skills#<commit>`.
 
+## Local extensions
+
+The existing two skills retain their names. `gpui-kit` now routes repeated
+API/trait/receiver errors to lock-matching local source lookup and relative-skill
+reference resolution; native verification covers failure evidence and a small
+PNG/window-dimension checker. `gpui-kit-design-guides` adds interaction-transition
+checks. Upstream coding/design guide snapshots are left verbatim; additions live
+in separate references. Helpers are read-only and never launch GUI input.
+
+Python 3.11+ is required for helper TOML parsing. Test without Cargo, network or GUI:
+
+```sh
+python3 -m unittest discover -s skills/gpui-kit/scripts -p 'test_*.py' -v
+```
+
+The API helper inspects exact lock-version crates.io cache sources, not Cargo's
+complete graph, Rust type resolution or macro expansion. The capture helper
+checks PNG header dimensions against supplied measured bounds, not visual quality.
+
 ## Provenance and licensing
 
 `UPSTREAM.json` records the imported revision and hashes of every baseline skill file.
