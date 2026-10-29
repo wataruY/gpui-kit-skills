@@ -1,3 +1,3 @@
 # Synthetic stale-head trial
 
-Fixture revision A. No application behavior changes.
+Fixture revision B. No application behavior changes.
